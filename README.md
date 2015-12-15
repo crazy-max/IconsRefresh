@@ -1,6 +1,6 @@
 # Icons Refresh
 
-[![IconsRefresh 1.0.0.0 download](https://img.shields.io/badge/download-IconsRefresh%201.0.0.0-brightgreen.svg)](https://github.com/crazy-max/neard/releases/download/v1.0.0.0/IconsRefresh.exe)
+[![IconsRefresh 1.0.0.0 download](https://img.shields.io/badge/download-IconsRefresh%201.0.0.0-brightgreen.svg)](https://github.com/crazy-max/IconsRefresh/releases/download/v1.0.0.0/IconsRefresh.exe)
 
 Icons Refresh is a program to refresh Desktop, Start Menu and Taskbar icons without restart Explorer.<br />
 
