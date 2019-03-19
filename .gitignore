@@ -4,3 +4,5 @@
 /.dev
 /bin
 /vendor
+/*.syso
+/*.exe
