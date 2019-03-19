@@ -1,17 +1,25 @@
-language: go
-go:
-  - 1.11.x
+os: windows
+language: shell
 
 env:
   global:
+    - GOVERSION=1.11.5
     - GO111MODULE=on
     - GOOS=windows
     - GOARCH=386
 
+before_install:
+  - export GOPATH=${GOPATH:-/c/gopath}
+  - export GOROOT=${GOROOT:-/c/go}
+
 install:
-  - go mod download
+  - curl -fsS -o go${GOVERSION}.windows-amd64.zip https://storage.googleapis.com/golang/go${GOVERSION}.windows-amd64.zip
+  - 7z x go${GOVERSION}.windows-amd64.zip -y -o/c/
+  - go version
+  - go env
 
 script:
+  - go mod download
   - go generate -v
   - go build -o bin/IconsRefresh.exe
 
