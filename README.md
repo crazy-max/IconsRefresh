@@ -33,4 +33,4 @@ go build -o bin/IconsRefresh.exe
 ## License
 
 MIT. See `LICENSE` for more details.<br />
-Icon creadit to Oliver Scholtz
+Icon credit to Oliver Scholtz

@@ -4,6 +4,7 @@
 
 * Switch to Go language
 * Remove Visual C++ Redistributables dependency (Issue #1)
+* MIT license
 
 ## 1.0.0.0 (2015/12/15)
 
