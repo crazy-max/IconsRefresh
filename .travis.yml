@@ -10,6 +10,9 @@ env:
     - GOOS=windows
     - GOARCH=386
 
+before_install:
+  - export PATH=${GOPATH}/bin:${GOPATH}/bin/windows_386:${GOROOT}/bin:${PATH}
+
 install:
   - curl -fsS -o go${GOVERSION}.windows-amd64.zip https://storage.googleapis.com/golang/go${GOVERSION}.windows-amd64.zip
   - 7z x go${GOVERSION}.windows-amd64.zip -y -o/c/
