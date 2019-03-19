@@ -3,7 +3,7 @@ language: shell
 
 env:
   global:
-    - GOVERSION=1.11.5
+    - GOVERSION=1.12.1
     - GOROOT=/c/go
     - GOPATH=/c/gopath
     - GO111MODULE=on
@@ -22,7 +22,7 @@ install:
 script:
   - go mod download
   - go generate -v
-  - go build -o bin/IconsRefresh.exe
+  - go build -o bin/IconsRefresh.exe -v -ldflags "-v -H=windowsgui"
 
 deploy:
   provider: releases

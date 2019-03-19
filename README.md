@@ -22,7 +22,7 @@ Launch `IconsRefresh.exe`
 
 ## Build
 
-> Go 1.11.5 or higher required
+> Go 1.12 or higher required
 
 ```
 go mod download
