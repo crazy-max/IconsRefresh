@@ -4,13 +4,11 @@ language: shell
 env:
   global:
     - GOVERSION=1.11.5
+    - GOROOT=/c/go
+    - GOPATH=/c/gopath
     - GO111MODULE=on
     - GOOS=windows
     - GOARCH=386
-
-before_install:
-  - export GOPATH=${GOPATH:-/c/gopath}
-  - export GOROOT=${GOROOT:-/c/go}
 
 install:
   - curl -fsS -o go${GOVERSION}.windows-amd64.zip https://storage.googleapis.com/golang/go${GOVERSION}.windows-amd64.zip
