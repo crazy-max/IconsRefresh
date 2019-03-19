@@ -1,25 +1,36 @@
-# Icons Refresh
+<p align="center"><img width="100" src="https://raw.githubusercontent.com/crazy-max/IconsRefresh/master/.res/logo.png"></p>
 
-[![IconsRefresh 1.0.0.0 download](https://img.shields.io/badge/download-IconsRefresh%201.0.0.0-brightgreen.svg)](https://github.com/crazy-max/IconsRefresh/releases/download/v1.0.0.0/IconsRefresh.exe)
+<p align="center">
+  <a href="https://github.com/crazy-max/IconsRefresh/releases/latest"><img src="https://img.shields.io/github/release/crazy-max/IconsRefresh.svg?style=flat-square" alt="GitHub release"></a>
+  <a href="https://github.com/crazy-max/IconsRefresh/releases/latest"><img src="https://img.shields.io/github/downloads/crazy-max/IconsRefresh/total.svg?style=flat-square" alt="Total downloads"></a>
+  <a href="https://travis-ci.com/crazy-max/IconsRefresh"><img src="https://img.shields.io/travis/com/crazy-max/IconsRefresh/master.svg?style=flat-square" alt="Build Status"></a>
+  <a href="https://goreportcard.com/report/github.com/crazy-max/IconsRefresh"><img src="https://goreportcard.com/badge/github.com/crazy-max/IconsRefresh?style=flat-square" alt="Go Report"></a>
+  <a href="https://www.codacy.com/app/crazy-max/IconsRefresh"><img src="https://img.shields.io/codacy/grade/834f62e0849c4c008dd8df69b816d2a0/master.svg?style=flat-square" alt="Code Quality"></a>
+</p>
 
-Icons Refresh is a program to refresh Desktop, Start Menu and Taskbar icons without restart Explorer.<br />
+## About
 
-Tested on :
-* Windows XP Pro SP2 32-bits
-* Windows XP Pro SP3 32-bits
-* Windows Vista Pro SP1 64-bits
-* Windows 7 Pro SP1 64-bits
-* Windows 7 Ultimate 32-bits
-* Windows 7 Ultimate 64-bits
-* Windows 8 Pro 64-bits
-* Windows 8.1 Pro 64-bits
-* Windows 10 Pro 64-bits
+Icons Refresh :paintbrush: is a program written in [Go](https://golang.org/) to refresh Desktop, Start Menu and Taskbar icons without restart Explorer on Windows.
+
+## Download
+
+You can download the application on the [**releases page**](https://github.com/crazy-max/IconsRefresh/releases/latest).
 
 ## Usage
 
-Launch ``IconsRefresh.exe``
+Launch `IconsRefresh.exe`
+
+## Build
+
+> Go 1.11.5 or higher required
+
+```
+go mod download
+go generate -v
+go build -o bin/IconsRefresh.exe
+```
 
 ## License
 
-LGPL. See ``LICENSE`` for more details.
-Icon from Oliver Scholtz
+MIT. See `LICENSE` for more details.<br />
+Icon creadit to Oliver Scholtz

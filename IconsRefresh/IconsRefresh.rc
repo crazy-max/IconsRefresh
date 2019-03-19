@@ -1,4 +1,0 @@
-
-#include "resource.h"
-
-IDI_APPICON ICON IconsRefresh.ico

@@ -1,0 +1,28 @@
+language: go
+go:
+  - 1.11.x
+
+env:
+  global:
+    - GO111MODULE=on
+    - GOOS=windows
+    - GOARCH=386
+
+install:
+  - go mod download
+
+script:
+  - go generate -v
+  - go build -o bin/IconsRefresh.exe
+
+deploy:
+  provider: releases
+  api_key:
+    secure: frZj1fWkhiKsTd91URAQIeB2d8Xg8h43J6d59pqOzzraQlK7kv3JbrMRICPOGemYGg6eu5t/Ni1BkC745xhLeJAoDuV+6eXf4tNUItuF5yhEUEi30K3ePxorX8Xwwj1I8YnMH4xfIhs5RKakCRy5vYL6TOLIbB9N+pGv0MhZN7PcbxxJYDcFoCfBBahuitS6i5hvHuAcR1/V8GtBTp+LXt4b7EF9FLZB9DuXMbcLi95F8t5NonnRJnps+hSMX2OAusaBOZjVnzMudGPvBzgk/o6OTkBJx3BUAW/JAiTTNEoHiIYGiq2QYSd3rEY4uVmeP+OMWwUJ36MaROYi2VlNu9k3VrbiHNR+tamHJBNwMyUwFf9RvSZSVpL6ZYlfOJu459hG7jEpvL+dYm2w6szFWoeB45gdplzYGfH5eVGYJSV4SdiZEuAcxP7x48Q7Qdz48BqPdppQF6QXrYtnc6g+h2u3IwawBSks/n1Zi78W4oRfIFDFWc37q+0JXwTKvPxcahDLlXfYUWF3JpUWYN78PTAuV9HL+hbdUXXeCtChNiObvIgi9eYRE2IIPc0a9w/vpH8PhcsjKH5inNm6TKDy7KuFB09w4B6tiCEjVl8E/w6zjOz/7wznlz9FHQzgKux+3l/i+O0OHD9hDNH/qqt78YZJC7dF+/ro+kIAqFesvQU=
+  file_glob: true
+  file:
+    - bin/*.exe
+  skip_cleanup: true
+  draft: true
+  on:
+    tags: true
