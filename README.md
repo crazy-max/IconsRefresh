@@ -27,7 +27,7 @@ Launch `IconsRefresh.exe`
 ```
 go mod download
 go generate -v
-go build -o bin/IconsRefresh.exe
+go build -o bin/IconsRefresh.exe -v -ldflags "-v -H=windowsgui"
 ```
 
 ## License
