@@ -1,4 +1,5 @@
-//go:generate go install -v github.com/josephspurrier/goversioninfo/cmd/goversioninfo
+//go:generate go run gen.go
+//go:generate go get -u github.com/josephspurrier/goversioninfo/cmd/goversioninfo
 //go:generate goversioninfo -icon=.res/logo.ico
 package main
 
