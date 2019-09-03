@@ -8,7 +8,7 @@ on:
     branches:
       - master
     tags:
-      - '*.*.*'
+      - v*
 
 jobs:
   release:
@@ -25,10 +25,11 @@ jobs:
         run: |
           echo "$GITHUB_CONTEXT"
       -
-        name: Set TAG_NAME
+        name: Init
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo "##[set-env name=TAG_NAME;]${GITHUB_REF#refs/tags/}"
+          echo "##[set-env name=VERSION;]${GITHUB_REF#refs/tags/v}"
       -
         # https://github.com/actions/setup-go
         name: Set up Go
@@ -48,8 +49,6 @@ jobs:
         uses: actions/checkout@v1
       -
         name: Build
-        env:
-          VERSION: ${{ job.env.TAG_NAME }}
         run: |
           go mod download
           go generate -v
@@ -64,5 +63,5 @@ jobs:
         run: |
           go get -u github.com/tcnksm/ghr
           ghr --version
-          ghr -n ${TAG_NAME} -draft ${TAG_NAME} bin/IconsRefresh.exe
+          ghr -n ${VERSION} -draft ${TAG_NAME} bin/IconsRefresh.exe
         shell: bash
