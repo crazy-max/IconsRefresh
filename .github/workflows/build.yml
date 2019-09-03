@@ -25,11 +25,12 @@ jobs:
         run: |
           echo "$GITHUB_CONTEXT"
       -
-        name: Init
+        name: Prepare release
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo "##[set-env name=TAG_NAME;]${GITHUB_REF#refs/tags/}"
           echo "##[set-env name=VERSION;]${GITHUB_REF#refs/tags/v}"
+        shell: bash
       -
         # https://github.com/actions/setup-go
         name: Set up Go
