@@ -43,6 +43,7 @@ jobs:
         run: |
           echo "##[set-env name=GOPATH;]$(dirname $GITHUB_WORKSPACE)"
           echo "##[add-path]$(dirname $GITHUB_WORKSPACE)/bin"
+          echo "##[add-path]$(dirname $GITHUB_WORKSPACE)/bin/windows_386"
         shell: bash
       -
         # https://github.com/actions/checkout
