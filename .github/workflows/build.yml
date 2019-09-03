@@ -52,8 +52,8 @@ jobs:
         name: Build
         run: |
           go mod download
-          go generate -v
-          go build -o bin/IconsRefresh.exe -v -ldflags "-v -H=windowsgui"
+          GOARCH=386 go generate -v
+          GOARCH=386 go build -o bin/IconsRefresh.exe -v -ldflags "-v -H=windowsgui"
           file bin/IconsRefresh.exe
         shell: bash
       -
