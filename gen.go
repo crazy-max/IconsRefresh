@@ -3,6 +3,7 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
 	"log"
 	"os"
@@ -22,14 +23,14 @@ var versioninfoTpl = template.Must(template.New("").Parse(`{
 		"Comments": "",
 		"CompanyName": "",
 		"FileDescription": "Refresh icons on Desktop, Start Menu and Taskbar",
-		"FileVersion": "{{ .Version }}",
+		"FileVersion": "{{ .Version }}.0",
 		"InternalName": "",
 		"LegalCopyright": "https://github.com/{{ .Repository }}",
 		"LegalTrademarks": "",
 		"OriginalFilename": "IconsRefresh.exe",
 		"PrivateBuild": "",
 		"ProductName": "IconsRefresh",
-		"ProductVersion": "{{ .Version }}",
+		"ProductVersion": "{{ .Version }}.0",
 		"SpecialBuild": ""
 	},
 	"VarFileInfo":
@@ -48,9 +49,11 @@ func main() {
 	if version, ok = os.LookupEnv("VERSION"); !ok {
 		version = "0.0.0.0"
 	}
+	fmt.Println("gen.version:", version)
 	if repository, ok = os.LookupEnv("GITHUB_REPOSITORY"); !ok {
 		repository = "crazy-max/IconsRefresh"
 	}
+	fmt.Println("gen.repository:", repository)
 
 	f, err := os.Create("versioninfo.json")
 	if err != nil {
