@@ -54,6 +54,7 @@ jobs:
           go mod download
           go generate -v
           go build -o bin/IconsRefresh.exe -v -ldflags "-v -H=windowsgui"
+          file bin/IconsRefresh.exe
         shell: bash
       -
         name: GitHub Release
