@@ -1,13 +1,10 @@
-//go:generate go run gen.go
-//go:generate go get -u github.com/josephspurrier/goversioninfo/cmd/goversioninfo
+//go:generate go install github.com/josephspurrier/goversioninfo/cmd/goversioninfo
 //go:generate goversioninfo -icon=.res/logo.ico
 package main
 
 import (
 	"syscall"
 	"unsafe"
-
-	_ "github.com/josephspurrier/goversioninfo"
 )
 
 const (
