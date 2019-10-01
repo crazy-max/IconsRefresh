@@ -15,26 +15,19 @@ jobs:
     runs-on: windows-latest
     steps:
       -
-        name: Dump GitHub env
+        name: Prepare
+        id: prepare
         run: |
-          env
-      -
-        name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: |
-          echo "$GITHUB_CONTEXT"
-      -
-        name: Prepare release
-        if: startsWith(github.ref, 'refs/tags/')
-        run: |
-          echo "##[set-env name=TAG_NAME;]${GITHUB_REF#refs/tags/}"
-          echo "##[set-env name=VERSION;]${GITHUB_REF#refs/tags/v}"
+          if [[ $GITHUB_REF == refs/tags/* ]]; then
+            echo ::set-output name=version::${GITHUB_REF#refs/tags/v}
+          else
+            echo ::set-output name=version::snapshot
+          fi
         shell: bash
       -
         # https://github.com/actions/setup-go
         name: Set up Go
-        uses: actions/setup-go@v1
+        uses: actions/setup-go@master
         with:
           go-version: 1.12.4
       -
@@ -58,12 +51,13 @@ jobs:
           file bin/IconsRefresh.exe
         shell: bash
       -
+        # https://github.com/softprops/action-gh-release
         name: GitHub Release
-        if: success() && startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v1
+        if: success() && startsWith(github.ref, 'refs/tags/')
+        with:
+          draft: true
+          files: bin/IconsRefresh.exe
+          name: ${{ steps.prepare.outputs.version }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          go get -u github.com/tcnksm/ghr
-          ghr --version
-          ghr -n ${VERSION} -draft ${TAG_NAME} bin/IconsRefresh.exe
-        shell: bash
