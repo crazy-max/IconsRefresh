@@ -29,7 +29,7 @@ jobs:
         name: Set up Go
         uses: actions/setup-go@master
         with:
-          go-version: 1.12.4
+          go-version: 1.12.10
       -
         name: Set GOPATH
         # temporary fix (see https://github.com/actions/setup-go/issues/14)
@@ -43,13 +43,12 @@ jobs:
         name: Checkout
         uses: actions/checkout@v1
       -
-        name: Build
-        run: |
-          go mod download
-          GOARCH=386 go generate -v
-          GOARCH=386 go build -o bin/IconsRefresh.exe -v -ldflags "-v -H=windowsgui"
-          file bin/IconsRefresh.exe
-        shell: bash
+        # https://github.com/crazy-max/ghaction-mage
+        name: Mage build
+        uses: crazy-max/ghaction-mage@master
+        with:
+          version: latest
+          args: build
       -
         # https://github.com/softprops/action-gh-release
         name: GitHub Release
