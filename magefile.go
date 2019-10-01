@@ -94,6 +94,11 @@ func mod() string {
 	return ""
 }
 
+// version returns app version based on git tag
+func version() string {
+	return strings.TrimLeft(tag(), "v")
+}
+
 // tag returns the git tag for the current branch or "" if none.
 func tag() string {
 	s, _ := sh.Output("bash", "-c", "git describe --abbrev=0 --tags 2> /dev/null")
@@ -157,7 +162,7 @@ func versionInfo() error {
 		Version string
 	}{
 		Package: mod(),
-		Version: tag(),
+		Version: version(),
 	})
 }
 
