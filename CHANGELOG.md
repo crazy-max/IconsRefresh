@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.2.0 (2019/10/01)
+
+* Switch to [magefile](https://magefile.org) to build app
+* Move tools
+
 ## 2.1.0 (2019/09/03)
 
 * Switch to GitHub Actions
