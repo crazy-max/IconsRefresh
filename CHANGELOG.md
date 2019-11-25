@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2.1 (2019/11/25)
+
+* Rebuild
+
 ## 2.2.0 (2019/10/01)
 
 * Switch to [magefile](https://magefile.org) to build app
