@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.3.0 (2020/05/02)
+
+* Strip debug info
+* Go 1.13
+
 ## 2.2.1 (2019/11/25)
 
 * Rebuild
