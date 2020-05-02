@@ -39,7 +39,7 @@ func Build() error {
 
 	var args []string
 	args = append(args, "build", "-o", releasePath, "-v")
-	args = append(args, "-ldflags", "-v -H=windowsgui")
+	args = append(args, "-ldflags", "-s -w -v -H=windowsgui")
 
 	fmt.Println("⚙️ Go build...")
 	if err := sh.RunWith(goEnv, mg.GoCmd(), args...); err != nil {
