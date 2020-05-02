@@ -59,7 +59,6 @@ jobs:
         if: success() && startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            ./ghaction-virustotal-win32.exe
-            ./ghaction-virustotal-win64.exe
+            ./bin/IconsRefresh.exe
         env:
           VT_API_KEY: ${{ secrets.VT_API_KEY }}
