@@ -29,7 +29,7 @@ Launch `IconsRefresh.exe`
 ```
 go mod download
 go generate -v
-go build -o bin/IconsRefresh.exe -v -ldflags "-v -H=windowsgui"
+go build -o bin/IconsRefresh.exe -v -ldflags "-s -w -v -H=windowsgui"
 ```
 
 ## How can I help ?
