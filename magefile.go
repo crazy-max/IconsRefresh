@@ -25,7 +25,7 @@ var (
 	releasePath = path.Join(binPath, "IconsRefresh.exe")
 	goEnv       = map[string]string{
 		"GO111MODULE": "on",
-		"GOPROXY":     "https://goproxy.io",
+		"GOPROXY":     "https://goproxy.io,direct",
 		"GOOS":        "windows",
 		"GOARCH":      "386",
 		"CGO_ENABLED": "0",
