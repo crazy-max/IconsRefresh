@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.4.0 (2020/09/13)
+
+* Disable build verbose
+* Go 1.15
+* Update deps
+
 ## 2.3.0 (2020/05/02)
 
 * Strip debug info

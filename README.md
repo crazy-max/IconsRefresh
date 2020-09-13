@@ -1,4 +1,4 @@
-<p align="center"><img width="100" src="https://raw.githubusercontent.com/crazy-max/IconsRefresh/master/.res/logo.png"></p>
+<p align="center"><img width="100" src="https://raw.githubusercontent.com/crazy-max/IconsRefresh/master/.github/logo.png"></p>
 
 <p align="center">
   <a href="https://github.com/crazy-max/IconsRefresh/releases/latest"><img src="https://img.shields.io/github/release/crazy-max/IconsRefresh.svg?style=flat-square" alt="GitHub release"></a>
@@ -12,7 +12,8 @@
 
 ## About
 
-Icons Refresh :paintbrush: is a program written in [Go](https://golang.org/) to refresh Desktop, Start Menu and Taskbar icons without restart Explorer on Windows.
+Icons Refresh is a program written in [Go](https://golang.org/) to refresh Desktop, Start Menu and Taskbar icons
+without restart Explorer on Windows.
 
 ## Download
 
@@ -24,7 +25,7 @@ Launch `IconsRefresh.exe`
 
 ## Build
 
-> Go 1.12 or higher required
+> Go 1.14 or higher required
 
 ```
 go mod download
@@ -32,9 +33,12 @@ go generate -v
 go build -o bin/IconsRefresh.exe -v -ldflags "-s -w -v -H=windowsgui"
 ```
 
-## How can I help ?
+## How can I help?
 
-All kinds of contributions are welcome :raised_hands:! The most basic way to show your support is to star :star2: the project, or to raise issues :speech_balloon: You can also support this project by [**becoming a sponsor on GitHub**](https://github.com/sponsors/crazy-max) :clap: or by making a [Paypal donation](https://www.paypal.me/crazyws) to ensure this journey continues indefinitely! :rocket:
+All kinds of contributions are welcome :raised_hands:! The most basic way to show your support is to star :star2: the
+project, or to raise issues :speech_balloon: You can also support this project by
+[**becoming a sponsor on GitHub**](https://github.com/sponsors/crazy-max) :clap: or by making a
+[Paypal donation](https://www.paypal.me/crazyws) to ensure this journey continues indefinitely! :rocket:
 
 Thanks again for your support, it is much appreciated! :pray:
 

@@ -1,9 +1,9 @@
 module github.com/crazy-max/IconsRefresh
 
-go 1.13
+go 1.15
 
 require (
-	github.com/akavel/rsrc v0.8.0 // indirect
-	github.com/josephspurrier/goversioninfo v0.0.0-20200309025242-14b0ab84c6ca
+	github.com/josephspurrier/goversioninfo v1.2.0
 	github.com/magefile/mage v1.10.0
+	golang.org/x/sys v0.0.0-20200909081042-eff7692f9009
 )
